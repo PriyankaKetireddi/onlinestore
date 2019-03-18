@@ -8,15 +8,18 @@ import org.pke.shoppingbackend.dto.Category;
 public interface CategoryDAO {
 
 	
-	public default List<Category> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	boolean add(Category category);
 	
-	public default Category get(int id)
-	{
-		return null;
-	}
+	Category get(int id);
+	
+	List<Category> list();
+
+	
+	boolean update(Category category);
+
+	
+	boolean delete(Category category);
+
 	
 	
 }

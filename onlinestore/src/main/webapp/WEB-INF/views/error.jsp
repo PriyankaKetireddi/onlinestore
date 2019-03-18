@@ -3,9 +3,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
-
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -49,57 +46,52 @@
 	href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	crossorigin="anonymous">
- 
- 
- </head>
+
+
+</head>
 
 <body>
 	<div class="wrapper">
-		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
+		<!-- NavBar -->
+		<%-- <%@include file="./shared/navbar.jsp"%> --%>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+
+					<a class="navbar-brand" href="${contextRoot}/home">Home</a>
+				</div>
+			</div>
+
+		</nav>
+
 		<div class="content">
-			<!-- Page Content -->
-			<c:if test="${userClickHome == true}">
-				<%@include file="home.jsp"%>
-			</c:if>
-			<!-- About Content -->
-			<c:if test="${userClickAbout == true}">
-				<%@include file="about.jsp"%>
-			</c:if>
-			<!--Contact content  -->
-			<c:if test="${userClickContact == true}">
-				<%@include file="contact.jsp"%>
-			</c:if>
+			<div class="container">
 
-			<!--All Products  -->
-			<c:if
-				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@include file="ListProducts.jsp"%>
-			</c:if>
+				<div class="row">
 
-			<!--Single Product page  -->
-			<c:if test="${userClickShowProduct == true}">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>
+					<div class="col-xs-12">
+
+						<div class="jumbotron">
+
+							<h1>${errorTitle}</h1>
+							<hr />
+							<blockquote style="word-wrap:break-word">
+							${errorDescription}
+							</blockquote>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
 
 
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 
-		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.js"></script>
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
- -->
-		<!--Datatables.js -->
-		<script src="${js}/jquery.dataTables.js"></script>
 
-		<!--Datatables.js -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-
-		<script src="${js}/bootstrap.bundle.min.js"></script>
-		<!--Self Coded javaScript file  -->
-		<script src="${js}/myapp.js"></script>
 	</div>
 </body>
 
