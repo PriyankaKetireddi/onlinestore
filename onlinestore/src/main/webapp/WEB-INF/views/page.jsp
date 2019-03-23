@@ -49,9 +49,9 @@
 	href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	crossorigin="anonymous">
- 
- 
- </head>
+
+
+</head>
 
 <body>
 	<div class="wrapper">
@@ -80,6 +80,12 @@
 			<!--Single Product page  -->
 			<c:if test="${userClickShowProduct == true}">
 				<%@include file="singleProduct.jsp"%>
+			</c:if>
+
+
+			<!--Manage Products page  -->
+			<c:if test="${userClicksManageProducts == true}">
+				<%@include file="ManageProducts.jsp"%>
 			</c:if>
 
 
